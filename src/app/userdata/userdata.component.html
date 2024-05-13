@@ -1,0 +1,30 @@
+
+ <div class="container mt-4">
+  <div class="head"><h2>User Data List</h2></div>
+  <div class="loading-bar" *ngIf="!usersLoaded">
+    <div class="loading-bar-element"></div>
+  </div>
+  <div class="row g-3">
+    <div *ngFor="let user of users" class="col-md-4 animation">
+      <a [routerLink]="['/user', user.id]">
+        <div class="card">
+          <div class="cardImg">
+            <img [src]="user.avatar" class="card-img-top w-100" alt="..." />
+          </div>
+          <div class="card-body content">
+            <p>{{ user.id }}.</p>
+            <p>{{ user.first_name }} {{ user.last_name }}</p>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="mx-auto text-center" *ngIf="usersLoaded">
+  <div class="pagination">
+    <button (click)="prevPage()" [disabled]="currentPage === 1"><i class="fa-solid fa-arrow-left"></i></button>
+    <span class="fw-bold">Page {{ currentPage }} of {{ totalPages }}</span>
+    <button (click)="nextPage()" [disabled]="currentPage === totalPages"><i class="fa-solid fa-arrow-right"></i></button>
+  </div>
+</div>

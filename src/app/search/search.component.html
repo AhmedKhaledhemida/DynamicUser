@@ -1,0 +1,85 @@
+<!-- <div class="body">
+  <div class="container-fluid main_margins homeSearch">
+    <div
+      class="d-flex align-content-center bg-white form-control m-auto p-2 rounded-5 search"
+    >
+      <i
+        class="fa-solid fa-magnifying-glass align-self-center ps-2 search_icon"
+      ></i>
+      <div class="position-relative">
+        <input
+          type="text"
+          [(ngModel)]="searchId"
+          (input)="search()"
+          placeholder="Search by ID ..."
+          class="form-control"
+        />
+
+        <div class="search-result">
+          <div *ngIf="user">
+            <div *ngIf="user.id">
+              <a [routerLink]="['/user', user.id]">
+                <div class="searchinfo d-flex align-content-center flex-wrap">
+                  <div class="">
+                    <img [src]="user.avatar" alt="User Avatar" />
+                  </div>
+
+                  <div class="align-self-center">
+                    <p class="ms-5">
+                      {{ user.id }}.{{ user.first_name }} {{ user.last_name }}
+                    </p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div *ngIf="!user">
+          <p> </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+<div class="body">
+  <div class="container-fluid main_margins homeSearch">
+    <div
+      class="d-flex align-content-center bg-white form-control m-auto p-2 rounded-5 search"
+      (click)="clearSearchInfo()"
+    >
+      <i
+        class="fa-solid fa-magnifying-glass align-self-center ps-2 search_icon"
+      ></i>
+      <div class="position-relative">
+        <input
+          type="text"
+          [(ngModel)]="searchId"
+          (input)="search()"
+          placeholder="Search by ID ..."
+          class="form-control"
+        />
+
+        <div class="search-result">
+          <div *ngIf="user">
+            <div *ngIf="user.id">
+              <a [routerLink]="['/user', user.id]">
+                <div class="searchinfo d-flex align-content-center flex-wrap">
+                  <div class="">
+                    <img [src]="user.avatar" alt="User Avatar" />
+                  </div>
+
+                  <div class="align-self-center">
+                    <p class="ms-5">
+                      {{ user.id }}.{{ user.first_name }} {{ user.last_name }}
+                    </p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+         
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

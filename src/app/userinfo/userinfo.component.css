@@ -1,0 +1,123 @@
+.container {
+  box-shadow: 3px 3px 15px 0px rgba(0, 0, 0, 0.1);
+
+
+}
+.animation {
+  animation: slideFromLeft 0.5s forwards;
+  display: flex;
+}
+
+@keyframes slideFromLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.picture,
+.content {
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.content span {
+  color: rgb(160, 28, 28);
+}
+.data {
+  display: flex;
+  align-items: center;
+}
+.picture img {
+  border-radius: 50%;
+}
+
+p {
+  color: #1f2937;
+  font-size: 30px;
+  font-weight: bold;
+  align-items: center;
+}
+
+.id {
+  display: inline-block;
+  border-radius: 50%;
+  padding: 0 10px;
+  background-color: #1f2937;
+  color: white;
+  font-size: 20px;
+}
+/*  back button  */
+.back {
+  margin-left: 10px;
+
+  top: 0;
+  left: 0;
+}
+.back button {
+  font-size: 17px;
+  padding: 5px 5px;
+  font-weight: 500;
+  background: #1f2937;
+  color: white;
+  border: none;
+  border-radius: 0.6em;
+  cursor: pointer;
+}
+
+.back button:hover {
+  background-color: rgba(16, 185, 129, 0.6);
+}
+
+/* loading bar */
+.loading-bar {
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: 150px;
+  background: rgba(236, 236, 238, 0.253);
+  height: 10px;
+  border-radius: 7px;
+}
+
+.loading-bar-element {
+  width: 1px;
+  height: 10px;
+  border-radius: 7px;
+  background: #0071e2;
+  transition: 0.5s;
+  animation: loading_44 5s cubic-bezier(0.4, 1.01, 1, 1) infinite;
+}
+
+@keyframes loading_44 {
+  0% {
+    width: 0%;
+  }
+
+  50% {
+    width: 100%;
+  }
+
+  100% {
+    width: 0%;
+  }
+}

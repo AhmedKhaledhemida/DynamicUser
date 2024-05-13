@@ -1,0 +1,32 @@
+<div class="back">
+  <a [routerLink]="['']">
+    <button><i class="fa-solid fa-arrow-left"></i>BACK</button>
+  </a>
+</div>
+<div class="loading-bar" *ngIf="!usersLoaded">
+  <div class="loading-bar-element"></div>
+</div>
+<div *ngIf="usersLoaded">
+<div class="container mt-2">
+  <div *ngIf="users">
+    <div class="row">
+      <div class="animation">
+      <div class="picture col-md-4">
+        <img [src]="users.data.avatar" class="w-100" alt="..." />
+      </div>
+
+      <div class="content col-md-8 ">
+        <div class="data">
+          <p class="id mx-2">{{ users.data.id }}</p>
+          <p>{{ users.data.first_name }} {{ users.data.last_name }}</p>
+        </div>
+        <p><span>Email: </span>{{ users.data.email }}</p>
+      </div>
+    </div>
+  </div>
+  </div>
+    <div *ngIf="!users">
+      <p>Loading user details...</p>
+    </div>
+  </div>
+</div>
