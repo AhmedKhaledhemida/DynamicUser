@@ -82,10 +82,7 @@ padding:0px 7px;
   }
 }
 
-.picture,
-.content {
-  opacity: 0;
-}
+
 
 @keyframes fadeIn {
   from {
